@@ -1,0 +1,143 @@
+package com.example.myapplication4mt19cs060_02;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+public class MainActivity extends AppCompatActivity {
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,ba,bs,bm,bd,be;
+    EditText e1;
+    float f1,f2;
+    boolean add,mul,div,sub;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        b0=(Button)findViewById(R.id.button);
+        b1=(Button)findViewById(R.id.button4);
+        b2=(Button)findViewById(R.id.button5);
+        b3=(Button)findViewById(R.id.button6);
+        b4=(Button)findViewById(R.id.button7);
+        b5=(Button)findViewById(R.id.button8);
+        b6=(Button)findViewById(R.id.button9);
+        b7=(Button)findViewById(R.id.button10);
+        b8=(Button)findViewById(R.id.button11);
+        b9=(Button)findViewById(R.id.button12);
+
+        ba=(Button)findViewById(R.id.button2);
+        bs=(Button)findViewById(R.id.button13);
+        bm=(Button)findViewById(R.id.button14);
+        bd=(Button)findViewById(R.id.button15);
+
+        e1=(EditText)findViewById(R.id.editTextTextPersonName);
+        b0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"0");
+            }
+        });
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"1");
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"2");
+            }
+        });
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"3");
+            }
+        });
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"4");
+            }
+        });
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"5");
+            }
+        });
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"6");
+            }
+        });
+        b7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"7");
+            }
+        });
+        b8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"8");
+            }
+        });
+        b9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                e1.setText(e1.getText()+"9");
+            }
+        });
+        ba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                f1=Float.parseFloat(String.valueOf(e1.getText()));
+                add=true;
+                e1.setText(null);
+            }
+        });
+        bs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                f1=Float.parseFloat(String.valueOf(e1.getText()));
+                sub=true;
+                e1.setText(null);
+            }
+        });
+        bm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                f1=Float.parseFloat(String.valueOf(e1.getText()));
+                mul=true;
+                e1.setText(null);
+            }
+        });
+        bd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                f1=Float.parseFloat(String.valueOf(e1.getText()));
+                div=true;
+                e1.setText(null);
+            }
+        });
+        be.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                f2=Float.parseFloat(String.valueOf(e1.getText()));
+                if (add=true)
+                    e1.setText(String.valueOf(f1+f2));
+                if(sub=true)
+                    e1.setText(String.valueOf(f1-f2));
+                if(mul=true)
+                    e1.setText(String.valueOf(f1*f2));
+                if(div=true)
+                    e1.setText(String.valueOf(f1/f2));
+            }
+        });
+
+        }
+}
