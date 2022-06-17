@@ -9,21 +9,24 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Button start,stop;
-    TextView txtcounter;
-    Handler customHandler=new Handler();
+    Button startbtn,stopbtn;
+    TextView textcounter;
     int i=1;
+    Handler customHandler=new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        start.setOnClickListener(new View.OnClickListener() {
+        textcounter=findViewById(R.id.textView);
+        startbtn=findViewById(R.id.button);
+        stopbtn=findViewById(R.id.button2);
+        startbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             customHandler.postDelayed(updateCounterThread,0);
+                customHandler.postDelayed(updateCounterThread,0);
             }
         });
-        stop.setOnClickListener(new View.OnClickListener() {
+        stopbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 customHandler.removeCallbacks(updateCounterThread);
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private final Runnable updateCounterThread=new Runnable() {
         @Override
         public void run() {
-            txtcounter.setText(" "+i);
+            textcounter.setText(" "+i);
             customHandler.postDelayed(this,1000);
             i++;
         }
