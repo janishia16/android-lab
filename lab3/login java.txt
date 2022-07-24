@@ -81,13 +81,15 @@ public class Login extends AppCompatActivity {
                 }
                 else
                 {
-                    counter--;
-                    if(counter==0)
-                    {
+                    Toast.makeText(login.this,"Invalid credentials",Toast.LENGTH_LONG).show();
+                }
+                counter--;
+                if(counter==0)
+                {
                         Toast.makeText(Login.this, "Too many failure attempts", Toast.LENGTH_LONG).show();
                         Loginbtn.setEnabled(false);
-                    }
                 }
+             
             }
         });
     }
